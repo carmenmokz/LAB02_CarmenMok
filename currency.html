@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convertidor de Divisas</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto|Alfa Slab One:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="loadStarStatus()">
+	<!--Header-->
+	<header class="container-fluid main-header-banner">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar-inverse navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="converter.html">Home</a></li>
+                                <li><a href="currency.html">Divisas Favoritas</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <section class="header-text">
+                        <h1>Divisas Favoritas</h1>
+                        <p>Elije tus monedas favoritas</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="currency_options" class="container body-style">
+    <h2>Opciones</h2>
+    <br>
+      <div class="row">
+        <div class="col-sm-2 flag-img">
+            <img class="flag-img" src="images/bm-flag.jpg" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Bermuda
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> BMD
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Dolar Bermudeño
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito 
+            <img src="images/star-empty.png" id="BMD/Bermuda" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/br.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Brasil
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> BRL
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Real Brasileño
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> R$
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="BRL/Brasil" onclick="addCurrency(this)">
+        </div>
+      </div>
+        
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/bg.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Bulgaria
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> BGN
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Leva Bulgaro
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> лв
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="BGN/Bulgaria" onclick="addCurrency(this)">
+        </div>
+
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/ca.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Canada
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CAD
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Dolar Canadiense
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CAD/Canada" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/cl.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Chile
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CLP
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Peso Chileno
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CLP/Chile" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/cn.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> China
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CNY
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Yuan
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ¥
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CNY/China" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/co.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Colombia
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> COP
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Peso Colombiano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="COP/Colombia" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/cr.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Costa Rica
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CRC
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Colón Costarricense
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ₡
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CRC/CostaRica" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/cz.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> República Checa
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CZK
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Corona Checa
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> Kč
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CZK/RepublicaCheca" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/dk.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Dinamarca
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> DKK
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Corona Danesa
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> kr$
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="DKK/Dinamarca" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/do.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> República Dominicana
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> DOP
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Peso Dominicano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> RD$
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="DOP/RepublicaDominicana" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/pl.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Polonia
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> PLN
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b>Złoty  Polaco
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> zł
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="PLN/Polonia" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/Bandera_de_la_UE.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Unión Europea
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> EUR
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Euro
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> €
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="EUR/UnionEuropea" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/kr.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Corea del Sur
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> KRW
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Won
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ₩
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="KRW/CoreaDelSur" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/kp.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Corea del Norte
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> KPW
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Won
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ₩
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="KPW/CoreaDelNorte" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/hk.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Hong Kong
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> HKD
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Dolar Hong Kong
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="HKD/HongKong" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/jp.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Japón
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> JPY
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Yen Japonés
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ¥
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="JPY/Japon" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/mx.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> México
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> MXN
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Peso Mexicano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="MXN/Mexico" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/ni.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Nicaragua
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> NIO
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Córdoba Nicaragüense
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> C$
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="NIO/Nicaragua" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/pa.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Panamá
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> PAB
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Balboa Panameño
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> B/.
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="PAB/Panama" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/au.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Australia
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> AUD
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Dolar Australiano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="AUD/Australia" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/cu.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Cuba
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> CUP
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Peso Cubano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> ₱
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="CUP/Cuba" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/gb.png" alt="">
+        </div>
+        <div class="col-sm-3" id="GBP">
+            <div class="col-sm">
+              <b>País:</b> Gran Bretaña
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> GBP
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Libra Reino Unido
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> £
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="GBP/GranBretana" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/us.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Estados Unidos
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> USD
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Dolar
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> $
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="USD/EstadosUnidos" onclick="addCurrency(this)">
+        </div>
+      </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-2">
+            <img class="flag-img" src="images/ve.png" alt="">
+        </div>
+        <div class="col-sm-3">
+            <div class="col-sm">
+              <b>País:</b> Venezuela
+            </div>
+            <div class="col-sm">
+                <b>ID:</b> VEF
+            </div>
+            <div class="col-sm">
+                <b>Moneda:</b> Bolivar Venezolano
+            </div>
+            <div class="col-sm">
+                <b>Símbolo:</b> Bs
+            </div>
+        </div>
+        <div class="col-sm">
+            <br>
+            Favorito
+            <img src="images/star-empty.png" id="VEF/Venezuela" onclick="addCurrency(this)">
+        </div>
+      </div>
+    </div>
+
+
+<!-- Scripts go here!!! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jscripts.js"></script>
+</body>
+</html>

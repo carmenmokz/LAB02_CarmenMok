@@ -1,0 +1,252 @@
+
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* General Typography */
+p {
+  color: #413d4b;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3.25rem;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+h2 {
+  font-size: 1.375rem;
+  font-family: 'Alfa Slab One', cursive;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+
+/* Overwrite bootstrap styles */
+/* Buttons */
+.btn {
+  border-radius: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  color: #1a3647;
+  background-color: transparent;
+  border-color: #1a3647;
+}
+
+.btn-primary:hover {
+  color: #1a3647;
+  background-color: #eaf0f2;
+  border-color: #eaf0f2;
+}
+
+/* Navbar */
+.navbar-inverse {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #FFF;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+}
+
+.navbar-right {
+  margin-top: 12px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #eaf0f2;
+  background-color: #d8b57d; 
+}
+
+/* Header */
+.main-header-banner h1{
+  color: #FFF;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.main-header-banner p {
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 140%;
+}
+
+.main-header-banner {
+  background-image: url(../images/money_header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 20rem;
+}
+
+.main-header-banner .header-text {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.main-header-banner .header-text h1, .main-header-banner .header-text p {
+  margin-bottom: 2.5rem;
+}
+
+
+/* Footer */
+footer .social {
+  list-style-type: none;
+  margin-top: 2;
+  padding: 0;
+}
+
+footer .social li {
+  display: inline;
+}
+
+footer .social a {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  border: 1px solid #4eb9ce;
+  text-align: center;
+  padding-top: 6px;
+}
+
+footer .social i {
+  color: #4eb9ce;
+  font-size: 1.4rem;
+}
+
+
+/* Dividers */
+.divider {
+  display: inline-block;
+  height: 0px;
+  border-top: 3px solid #7c93a3;
+  width: 50px;
+  margin-bottom: 30px;
+}
+
+/* Panels */
+.panel {
+  padding: 5rem 0;
+}
+
+/* Dropdown Menu*/
+.dropdown-menu >li.kopie>a {
+    padding-left:5px;
+}
+
+.dropdown-menu >li> a {
+    color: #1a3647;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+}
+
+.dropdown-menu >li>a:hover {
+  color: #eaf0f2;
+  background-color: #1a3647; 
+}
+
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+   top:0;left:100%;
+   margin-top:-6px;margin-left:-1px;
+   -webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;
+ }
+  
+.dropdown-submenu > a:after {
+  border-color: transparent transparent transparent #333;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  content: " ";
+  display: block;
+  float: right;  
+  height: 0;     
+  margin-right: -10px;
+  margin-top: 5px;
+  width: 0;
+}
+ 
+.dropdown-submenu:hover>a:after {
+    border-left-color:#555;
+ }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > .active > a:hover {
+  text-decoration: none;
+}  
+  
+@media (max-width: 767px) {
+
+  .navbar-nav  {
+     display: inline;
+  }
+  .navbar-default .navbar-brand {
+    display: inline;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
+  .navbar-default .navbar-nav .dropdown-menu > li > a {
+    color: red;
+    background-color: #ccc;
+    border-radius: 4px;
+    margin-top: 2px;   
+  }
+   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+     color: #333;
+   }
+   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+     background-color: #ccc;
+   }
+
+   .navbar-nav .open .dropdown-menu {
+     border-bottom: 1px solid white; 
+     border-radius: 0;
+   }
+  .dropdown-menu {
+      padding-left: 10px;
+  }
+  .dropdown-menu .dropdown-menu {
+      padding-left: 20px;
+   }
+   .dropdown-menu .dropdown-menu .dropdown-menu {
+      padding-left: 30px;
+   }
+   li.dropdown.open {
+    border: 0px solid red;
+   }
+
+}
+ 
+@media (min-width: 768px) {
+  ul.nav li:hover > ul.dropdown-menu {
+    display: block;
+  }
+  #navbar {
+    text-align: center;
+  }
+}
+
+.body-style{
+  padding: 50px;
+}  
+
+.flag-img {
+  max-width:80%;
+  max-height:80%;
+}
+
+
+
